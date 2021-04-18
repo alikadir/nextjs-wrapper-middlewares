@@ -1,21 +1,21 @@
-import { deleteAllKey, getCacheKey, setCacheKey } from 'lib/cacheService.js';
+import { getCacheKey, setCacheKey } from 'lib/cacheService.js';
 
 describe('cacheService', () => {
   const testKey = 'test-key';
   const testValue = `sample test value - ${new Date().toString()}`;
 
-  test('remove all keys', async (done) => {
-    await deleteAllKey();
-    done();
-  });
-
   test('set key', async (done) => {
-    await setCacheKey(testKey, testValue);
+    await setCacheKey(testKey, testValue, 75);
     done();
   });
 
   test('get value', async () => {
     const keyValue = await getCacheKey(testKey);
     expect(keyValue).toBe(testValue);
+  });
+
+  test('get unknown key', async () => {
+    const keyValue = await getCacheKey(testKey + 'random');
+    expect(keyValue).toBeNull();
   });
 });

@@ -1,4 +1,4 @@
-import { getCacheKey, setCacheKey } from 'lib/cacheService.js';
+import { getCacheKey, setCacheKey } from '../lib/cacheService.js';
 
 describe('cacheService', () => {
   const testKey = 'test-key';

@@ -26,11 +26,6 @@
   "engines": {
     "node": ">=15"
   },
-  "jscsConfig": {
-    "compilerOptions": {
-      "baseUrl": "."
-    }
-  },
   "babel": {
     "presets": [
       "next/babel"

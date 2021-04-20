@@ -1,4 +1,4 @@
-import { logger } from 'lib/logService.js';
+import { logger } from '../lib/logService.js';
 
 describe('logService', () => {
   test('write info log', (done) => {
